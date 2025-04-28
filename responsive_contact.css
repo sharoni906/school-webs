@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    color: #42424A;
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    background-color: rgba(214, 235, 191, 0.911);
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.logoname {
+    font-size: 14px;
+    top:9px;
+    font-family: 'Oswald', sans-serif;
+   /* Reduced spacing */
+}
+.n1 {
+    font-size: 14px;
+    top:9px;
+    font-family: 'Oswald', sans-serif;
+   /* Reduced spacing */
+    margin-right: 630px ;                   
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #42424A;
+    font-size: 15px;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(141, 212, 147, 0.904);
+    border-radius: 5px;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: rgba(214, 235, 191, 0.911);
+    display: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    width: 100%;
+}
+
+.submenu li a {
+    padding: 10px;
+    display: block;
+    color: black;
+}
+
+.submenu li a:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
+    .logoname {
+    font-size: 12px;
+    top:6px;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 35px; /* Reduced spacing */
+}
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(214, 235, 191, 0.911);
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .submenu {
+        position: static;
+        width: 100%;
+        display: none;
+    }
+
+    nav ul li:hover .submenu {
+        display: block;
+    }
+
+    .menu-toggle.active + nav {
+        display: block;
+    }
+}
+/* Main background */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #c9e79f;
+    background-image: url('/public/images/contact.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Contact Card */
+.contact-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 700px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+/* Hover effect */
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Headings */
+.contact-card h3 {
+    font-size: 2rem;
+    color: #2d572c;
+}
+
+
+h5 {
+    font-size: 1.3rem;
+    color: #3e3e3e;
+    margin-bottom: 10px;
+}
+
+
+/* Paragraph Styling */
+p {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+
+/* Links for phone and email */
+p a {
+    text-decoration: none;
+    color: #006400;
+    font-weight: bold;
+}
+
+
+p a:hover {
+    text-decoration: underline;
+    color: #ff4500;
+}
+
+
+
+
+
+
+/* footer */
+
+
+footer {
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px 25px;
+position: fixed;
+bottom: 0;
+width: 100%;
+border: 9px;
+}
+
+
+footer div {
+max-width: 1200px;
+margin: auto;
+}
+
+
+footer p {
+    color: white;
+margin: 0;
+font-size: 14px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-card {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center; /* center vertically */
+    gap: 10px; /* space between logo and text */
+}
+
+.logo img {
+    width: 60px; /* adjust logo size */
+    height: auto;
+}
+
+.g1 {
+    font-size: 14px; /* slightly smaller */
+    font-family: 'Oswald', sans-serif;
+    margin: 0; /* remove default margins */
+}

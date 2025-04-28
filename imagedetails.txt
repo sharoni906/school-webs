@@ -1,0 +1,52 @@
+index.html
+	-schoolkids.png
+	-/public/images/schoolKids.png
+curriculum.html
+	-curriculum-removebg-preview.png
+	-/public/images/curriculum-removebg-preview.png
+ourTeam.html
+	-team2.jpeg
+	-/public/images/team2.jpeg
+	-p-image1.jpeg
+	-/public/images/p-image1.jpeg
+	-p-image2.jpeg
+	-/public/images/p-image2.jpeg
+gallery.html
+	-image1.jpeg
+	-/public/images/image1.jpeg
+	-image2.jepg
+	-/public/images/image2.jpeg
+	-image3.jpeg
+	-/public/images/image3.jpeg
+	-image4.jpeg
+	-/public/images/image4.jpeg
+	-image5.jpeg
+	-/public/images/image5.jpeg
+	-image6.jpeg
+	-/public/images/image6.jpeg
+	-image7.jpeg
+	-/public/images/image7.jpeg
+	-image8.jpeg
+	-/public/images/image8.jpeg
+	-image9.jpeg
+	-/public/images/image9.jpeg
+	-image10.jpeg
+	-/public/images/image10.jpeg
+	-image11.jpeg
+	-/public/images/image11.jpeg
+	-image12.jpeg
+	-/public/images/image12.jpeg
+	-image13.jpeg
+	-/public/images/image13.jpeg
+	-image14.jpeg
+	-/public/images/image14.jpeg
+	-image15.jpeg
+	-/public/images/image15.jpeg
+	-image16.jpeg
+	-/public/images/image16.jpeg
+	-image17.jpeg
+	-/public/images/image17.jpeg
+
+contact.html
+	-contact.png
+	-/public/images/contact.png(in css - contact.css)

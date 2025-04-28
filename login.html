@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light" >
+    <!-- Login Form -->
+    <div class="container bg-white p-4 rounded shadow" id="logincont">
+        <h2 class="text-center mb-4">Student Marks Login</h2>
+        <form action="register.php" method="POST">
+            <div class="mb-3">
+                <label for="role" class="form-label">Login as</label>
+                <select id="role" name="role" class="form-select" onchange="toggleStudentId('login')">
+                    <option value="teacher">Teacher</option>
+                    <option value="parent">Parent</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="text" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3" id="loginStudentIdField" style="display: none;">
+                <label for="studentid" class="form-label">Student ID</label>
+                <input type="text" id="studentid" name="studentid" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" name="signIn" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+            Don't have an account? <a href="#" onclick="toggleForms()">Sign up</a>
+        </div>
+    </div>
+
+
+    <!-- Registration Form -->
+    <div class="container bg-white p-4 rounded shadow" id="signupcont" style="display: none;">
+        <h2 class="text-center mb-4">Register</h2>
+        <form action="register.php" method="POST">
+            <div class="mb-3">
+                <label for="signupRole" class="form-label">Register as</label>
+                <select id="signupRole" name="role" class="form-select" onchange="toggleStudentId('signup')">
+                    <option value="teacher">Teacher</option>
+                    <option value="parent">Parent</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="signupName" class="form-label">Name</label>
+                <input type="text" id="signupName" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="signupEmail" class="form-label">Email</label>
+                <input type="text" id="signupEmail" name="email" class="form-control" required>
+            </div>
+            <div class="mb-3" id="signupStudentIdField" style="display: none;">
+                <label for="studentid" class="form-label">Student ID</label>
+                <input type="text" id="studentid" name="studentid" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input type="password" id="signupPassword" name="password" class="form-control" required>
+            </div>
+            <button type="submit" name="signUp" class="btn btn-primary w-100">Register</button>
+        </form>
+        <div class="text-center mt-3">
+            Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+        </div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="loginscript.js"></script>
+</body>
+</html>

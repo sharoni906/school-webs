@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="sec2row.css">
+    <link rel="stylesheet" href="thirdrow.css"> -->
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+    <!-- <link rel="stylesheet" href="responsive_second.css"> -->
+    <!-- <link rel="stylesheet" href="responsive_contact.css"> -->
+    <link rel="stylesheet" href="responsive_curriculum.css">
+
+
+
+
+    <!-- <link rel="stylesheet" href="responsive_third.css"> -->
+   
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo11.png" alt="Logo"></a>
+            <h3 class="g1">Green Meadows Nursery <br>And Primary School</h3>
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="response.html">Home</a></li>
+                <li><a href="#">Inside Our School</a>
+                    <ul class="submenu">
+                        <li><a href="responsive_curriclum.html">Curriculum</a></li>
+                        <li><a href="responsive_ourteam.html">Our Team</a></li>
+                    </ul>
+                </li>
+                <li><a href="responsive_gallery.html">Gallery</a></li>
+                <li><a href="login.html">Student Marks</a></li>
+                <li><a href="responsive_contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- javascript  -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('nav').classList.toggle('active');
+        });
+    </script>
+    <main class="main-curriculum">
+        <div class="curi-container">
+            <div class="container-title" data-aos="fade-down">
+                <h3>"A Curriculum That Builds a Strong Foundation for the Future"</h3>
+                <p>Designed for engagement, creativity, and meaningful learning.</p>
+            </div>
+
+
+
+
+            <div class="container-main">
+                <p >We follow a high-standard syllabus that builds a strong learning foundation. Our structured
+                    curriculum makes learning fun, engaging, and meaningful. Using interactive methods, we          
+                    encourage curiosity, creativity, and critical thinking. Along with academics, we focus on life      
+                    skills, values, and communication, helping students express themselves confidently and
+                    succeed in the future. </p>
+                <!-- <img src="curriculum-removebg-preview.png" alt="Curriculum Image" data-aos="fade-left"> -->
+            </div>
+
+
+
+
+            <div class="partition">
+                <h3>Why our curriculum stands out</h3>
+                <div class="card" >
+                   <p>Interactive Learning – Engaging and fun lessons. </p>
+                </div>
+                <div class="card" >
+                    <p>Critical Thinking – Encouraging problem-solving skills. </p>
+                </div>
+                <div class="card" >
+                    <p>
+                        Life Skills & Values – Preparing for a bright future.
+                    </p>
+                </div>
+                <div class="card" >
+                    <p> Strong Communication – Building confidence in speaking. </p>
+                </div>
+            </div>
+        </div>
+    </main>
+ 
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+        AOS.init();
+  </script>
+</body>
+</html>

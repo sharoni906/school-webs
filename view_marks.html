@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Student Marks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    .table th {
+        background-color: #28a745; /* Green header background */
+        color: white; /* White text */
+    }
+    body.bg-light {
+        background-color: rgba(188, 197, 155, 0.731) !important;
+    }
+ .fa-trash {
+  color: rgb(126, 123, 217) !important;
+  cursor: pointer; /* Makes it look clickable */
+}
+</style>    
+<body class="bg-light">
+    <div class="container p-4 bg-white rounded shadow">
+        <h1 class="text-center mb-4">Student Marks</h1>
+        <div id="marks-container"></div>
+    </div>
+
+    <script>
+        fetch('fetch_marks.php')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); // Debugging purpose
+                const container = document.getElementById('marks-container');
+                const customOrder = ['LKG', 'UKG', '1', '2', '3', '4', '5'];
+
+                customOrder.forEach(standard => {
+                    if (data[standard]) {
+                        container.innerHTML += `<h2 class="text-center mb-3">Standard: ${standard}</h2>`;
+
+                        const subjects = data[standard];
+                        let tableHTML = `
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Student ID</th>
+                                        <th>Name</th>
+                                        <th>Subject</th>
+                                        <th>Exam Type</th>
+                                        <th>Marks</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                        `;
+
+                        for (const subject in subjects) {
+                            tableHTML += `
+                                <tr>
+                                    <td colspan="6" class="text-center bg-light"><strong>${subject}</strong></td>
+                                </tr>
+                            `;
+
+                            subjects[subject].forEach(row => {
+                                tableHTML += `
+                                    <tr>
+                                        <td>${row.student_id}</td>
+                                        <td>${row.name}</td>
+                                        <td>${subject}</td>
+                                        <td>${row.exam_type}</td>
+                                        <td>${row.marks}</td>
+                                        <td>
+                                            <i class="fas fa-trash text-danger"
+                                               onclick="deleteRecord('${row.student_id}', '${subject}', '${row.exam_type}')"></i>
+                                        </td>
+                                    </tr>
+                                `;
+                            });
+                        }
+
+                        tableHTML += `</tbody></table>`;
+                        container.innerHTML += tableHTML;
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching marks:', error);
+                alert('Failed to fetch marks. Check the console for details.');
+            });
+
+        function deleteRecord(studentId, subject, examType) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                fetch('delete_marks.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ student_id: studentId, subject: subject, exam_type: examType })
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        alert(data);
+                        location.reload();
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+</body>
+</html>
+
